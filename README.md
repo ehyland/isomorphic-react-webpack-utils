@@ -18,6 +18,15 @@
     └── transformStats.js
 ```
 
+## npm scripts
+```json
+"scripts": {
+  "dev": "DEBUG=app:* NODE_ENV=development node index",
+  "build": "webpack --config ./webpack/prod.config.js",
+  "start": "NODE_ENV=production node index"
+}
+```
+
 ## .babelrc
 ```json
 {
