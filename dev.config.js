@@ -1,6 +1,8 @@
 import path from "path";
 import webpack from "webpack";
 import WebpackErrorNotificationPlugin from "webpack-error-notification";
+import WriteStartsPlugin from "./utils/WriteStartsPlugin";
+
 
 import loaders from "./loaders";
 
@@ -26,7 +28,6 @@ const config = {
   },
   module: {
     loaders: [
-
       // Javascript
       {
         test: /\.js$/,
@@ -40,7 +41,7 @@ const config = {
         include: srcPath,
         loaders: ["style", "css", "autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true"]
       }
-  ].concat(loaders)
+    ].concat(loaders)
   },
   plugins: [
 
@@ -51,7 +52,10 @@ const config = {
         BROWSER: JSON.stringify(true)
       }
     }),
-    new WebpackErrorNotificationPlugin()
+    new WebpackErrorNotificationPlugin(),
+
+    // Write out stats.json file to build directory.
+    new WriteStartsPlugin(path.resolve(dist, "./stats.json"))
 
   ]
 

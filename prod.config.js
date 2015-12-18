@@ -1,10 +1,9 @@
 /*eslint no-var:0 */
 var path = require("path");
 var webpack = require("webpack");
-var StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var strip = require("strip-loader");
-var transformStats = require("./transformStats");
+var WriteStartsPlugin = require("./utils/WriteStartsPlugin");
 
 var loaders = require("./loaders");
 var dist = path.resolve(__dirname, "../static/build");
@@ -37,7 +36,7 @@ module.exports = {
         include: srcPath,
         loader: ExtractTextPlugin.extract("style", "css!autoprefixer?browsers=last 2 version!sass")
       }
-  ].concat(loaders)
+    ].concat(loaders)
   },
   plugins: [
     new ExtractTextPlugin("[name]-[chunkhash].css"),
@@ -59,6 +58,5 @@ module.exports = {
     }),
 
     // Write out stats.json file to build directory.
-    new StatsWriterPlugin({transform: transformStats})
-  ]
+    new WriteStartsPlugin(path.resolve(dist, "./stats.json"))]
 };
