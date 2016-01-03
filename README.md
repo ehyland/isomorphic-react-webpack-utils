@@ -77,6 +77,7 @@
 
 ## peer dependencies
 mkdirp  
+react  
 webpack  
 webpack-dev-server  
 webpack-error-notification  
