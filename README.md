@@ -76,19 +76,19 @@
 ```
 
 ## peer dependencies
-mkdirp
-webpack
-webpack-dev-server
-webpack-error-notification
-extract-text-webpack-plugin
-node-sass
-babel-core
-strip-loader
-react-hot-loader
-babel-loader
-style-loader
-css-loader
-autoprefixer-loader
-sass-loader
-url-loader
-file-loader
+mkdirp  
+webpack  
+webpack-dev-server  
+webpack-error-notification  
+extract-text-webpack-plugin  
+node-sass  
+babel-core  
+strip-loader  
+react-hot-loader  
+babel-loader  
+style-loader  
+css-loader  
+autoprefixer-loader  
+sass-loader  
+url-loader  
+file-loader  
