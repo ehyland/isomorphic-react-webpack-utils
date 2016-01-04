@@ -10,7 +10,7 @@ function getImageSrc(filename) {
     const searchPath = "./src/images/" + filename;
     const stats = require("./getStats")();
     if (stats && stats.images) {
-      const image = stats.images.find(img => img.original === searchPath);
+      const image = stats.images.find(function (img) {return img.original === searchPath});
       if (image) {
         return image.compiled;
       }
