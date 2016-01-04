@@ -7,8 +7,7 @@ function getImageSrc(filename) {
     const manifest = require("../../src/images/manifest");
     return manifest[filename];
   }else{
-    console.log('Looking for image on server');
-    const searchPath = `./src/images/${filename}`;
+    const searchPath = "./src/images/" + filename;
     const stats = require("./getStats")();
     if (stats && stats.images) {
       const image = stats.images.find(img => img.original === searchPath);
