@@ -22,7 +22,7 @@ module.exports = [
 
   // Other images
   {
-    test: /\.(jpe?g|png|gif)$/,
+    test: /\.(jpe?g|png|gif|ico)$/,
     loader: "file"
   }
 
