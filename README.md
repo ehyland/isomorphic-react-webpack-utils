@@ -1,4 +1,4 @@
-# My common webpack config for react projects
+# My common webpack config for isomorphic react projects
 
 ## File structure
 ```
